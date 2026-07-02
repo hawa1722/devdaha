@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISKCON Devdaha – Spiritual Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff7e6;
+      color: #4a2c00;
+    }
+    header {
+      background: linear-gradient(to right, #ffcc66, #ff9933);
+      padding: 20px;
+      text-align: center;
+      color: #4a2c00;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .logo img {
+  height: 70px;      
+  width: auto;       
+  margin-right: 20px;
+  border-radius: 5px; 
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+nav a {
+  margin: 0 12px;
+}
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #e69500;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #cc6600;
+      margin-bottom: 10px;
+    }
+    .gallery img {
+      width: 30%;
+      margin: 5px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+ /* Temple Style Donation Box */
+.donation-temple-box {
+  width: 420px;
+  margin: auto;
+  text-align: center;
+  background: #fff7e6;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 149, 0, 0.6);
+  border: 3px solid #cc7a00;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Temple Roof */
+.temple-top {
+  height: 70px;
+  background: linear-gradient(to bottom, #cc7a00, #ffcc66);
+  clip-path: polygon(50% 0%, 90% 100%, 10% 100%);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Temple Base */
+.temple-bottom {
+  height: 25px;
+  background: linear-gradient(to right, #cc7a00, #ffcc66);
+}
+
+/* Inner Donation Content */
+.inner-donation {
+  padding: 25px;
+  background-image: url('temple-pattern.png');
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.qr-code {
+  width: 180px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 3px solid #d48806;
+}
+
+#donationCounter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #b44a1a;
+  background: #fff3d4;
+  padding: 8px 0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #f0b46f;
+}
+
+#donationInput {
+  padding: 12px;
+  font-size: 18px;
+  width: 90%;
+  border-radius: 8px;
+  border: 2px solid #d48806;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #ff9933, #cc6600);
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 132, 0, 0.6);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #cc6600, #ff9933);
+  transform: scale(1.05);
+}
+/* 🔔 Mandir Bell */
+.temple-bell {
+  width: 80px;
+  margin-top: 10px;
+  animation: bellSwing 2s infinite ease-in-out;
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-12deg); }
+ 100% { transform: rotate(0deg); }
+}
+
+/* 🪔 Diyas */
+.diya {
+  width: 60px;
+  height: 60px;
+  background: url('diya.jpng');
+  background-size: cover;
+  position: absolute;
+  bottom: -20px;
+  filter: drop-shadow(0 0 15px orange);
+}
+
+.left-diya { left: -30px; }
+.right-diya { right: -30px; }
+
+/* ✨ Golden Aura Glow */
+.donation-temple-box {
+  animation: goldenGlow 3s infinite alternate;
+}
+
+@keyframes goldenGlow {
+  from { box-shadow: 0 0 20px rgba(255,150,0,0.5); }
+  to { box-shadow: 0 0 40px rgba(255,200,0,0.9); }
+}
+
+/* 🕉 Floating Mantra Particles */
+.mantra {
+  position: absolute;
+  font-size: 20px;
+  color: #cc6600;
+  font-weight: bold;
+  opacity: 0;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-80px); opacity: 0; }
+}
+
+
+    .book-box {
+      background: #ffe6b3;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+   
+  \\btn Donation Button */
+     body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff7e6;
+      color: #4a2c00;
+    }
+
+    header {
+      background: linear-gradient(45deg, #ffcc66, #ff9933);
+      padding: 20px;
+      text-align: center;
+      color: #4a2c00;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #6b3e11;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* Donation Button */
+    .donate-btn {
+      background: linear-gradient(135deg, #ffcc66, #ff9933);
+      color: #4a2500;
+      font-size: 22px;
+      padding: 18px 35px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    .donate-btn:hover {
+      background: linear-gradient(135deg, #ffd98a, #ffae42);
+      transform: scale(1.07);
+    }
+
+    footer {
+      background: #ffefcc;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: #4a2c00;
+      margin-top: 40px;
+      border-top: 2px solid #e6b566;
+    }
+  
+    .mantra-slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  background: #fff3d6;
+  border-top: 2px solid #e5b95c;
+  border-bottom: 2px solid #e5b95c;
+  cursor: pointer;
+}
+
+.mantra-track {
+  display: inline-block;
+  animation: slide 16s linear infinite;
+}
+
+.glow {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  padding-right: 80px;
+  color: #d48b00;
+
+  /* glowing effect */
+  text-shadow:
+    0 0 4px #ffcc45,
+    0 0 8px #ffba15,
+    0 0 12px #1a9169,
+    0 0 18px #ffb300,
+    0 0 24px #a5471c;
+}
+
+/* right → left sliding */
+@keyframes slide {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Compact audio controls */
+#audioControls {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,243,214,0.95);
+  border: 1px solid #e5b95c;
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-size: 12px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+#audioControls button{ padding:4px 6px; border-radius:6px; font-size:13px; cursor:pointer; }
+#audioControls .clock{ min-width:70px; text-align:center; font-weight:600; color:#b44a1a; }
+#audioControls.collapsed{ width:44px; height:40px; padding:4px; overflow:hidden; }
+#audioControls.collapsed .clock, #audioControls.collapsed input, #audioControls.collapsed button:not(#collapseAudio){ display:none; }
+@media (max-width:600px){ #audioControls{ top:auto; bottom:12px; right:12px; } }
+/* Krishna Puzzle Game */
+
+.puzzle-board{
+  width:330px;
+  margin:20px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.tile{
+  width:100px;
+  height:100px;
+  background:#ffcc66;
+  border:2px solid #cc6600;
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:38px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.tile:hover{
+  transform:scale(1.05);
+}
+
+.tile.opened{
+  background:#fff3d6;
+}
+
+#puzzleMessage{
+  margin-top:15px;
+  font-size:24px;
+  color:#cc6600;
+  font-weight:bold;
+}
+#kurukshetra-game{
+  text-align:center;
+}
+
+#gameBoard{
+  width:500px;
+  height:500px;
+  margin:20px auto;
+  border:4px solid #cc6600;
+  background:#fff3d6;
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+#player{
+  position:absolute;
+  left:20px;
+  top:20px;
+  font-size:35px;
+}
+
+.item,.enemy{
+  position:absolute;
+  font-size:30px;
+}
+#kurukshetra-game{
+  text-align:center;
+}
+
+#gameBoard{
+  width:500px;
+  height:500px;
+  margin:20px auto;
+  border:4px solid #cc6600;
+  background:#fff3d6;
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+#player{
+  position:absolute;
+  left:20px;
+  top:20px;
+  font-size:35px;
+}
+
+.item,.enemy{
+  position:absolute;
+  font-size:30px;
+}
+  </style>
+</head>
+<body>
+  <header>ISKCON Devdaha – International Society for Krishna Consciousness</header>
+
+  <nav>
+     <div class="logo">
+    <img src="ChatGPT Image Nov 25, 2025, 09_03_01 PM.png" alt="ISKCON Devdaha Logo">
+  </div>
+    <a href="#home">Home</a>
+    <a href="#images">Images</a>
+    <a href="#donation">Donation</a>
+    <a href="#geeta">Bhagavad Gita Quests</a>
+    <a href="#books">Books</a>
+    <a href="#pravupad">About Srila Prabhupada</a>
+    <a href="#events">Events</a>
+    <a href="#story">Stories</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Audio & Clock Controls (compact, collapsible) -->
+  <div id="audioControls">
+    <div style="display:flex; gap:8px; align-items:center;">
+      <span id="clock" class="clock"></span>
+      <button id="playAllBtn" title="Play">▶</button>
+      <button id="pauseAllBtn" title="Pause">⏸</button>
+      <button id="muteBtn" title="Mute">🔊</button>
+      <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="1" style="width:90px;">
+      <button id="collapseAudio" title="Collapse">▾</button>
+    </div>
+  </div>
+
+  <section id="home">
+    <h2>Welcome to ISKCON Devdaha</h2>
+    <p style="font-size:22px; line-height:1.6;">ISKCON Devdaha stands as a sacred spiritual center where devotees and seekers from all walks of life gather to immerse themselves in the teachings of Lord Krishna. Surrounded by divine peace and filled with the sound of kirtans, the temple inspires every visitor to connect with their inner self. Here, one can experience the essence of Bhakti Yoga, the joy of devotional service, and the happiness that comes from chanting the holy names. Our mission is to share the timeless wisdom of the Bhagavad Gita, guide individuals toward spiritual enlightenment, and create a global community rooted in love, compassion, and devotion. Whether you are beginning your spiritual journey or deepening your existing practice, ISKCON Devdaha welcomes you with open arms and a pure heart.</p>
+  </section>
+
+  <section id="images">
+    <h2>Temple Images</h2>
+    <div class="gallery">
+      <img src="🪷Radhakrishna🪷.jpeg" alt="Temple Image 1">
+      <img src="Jai Jagannath_ Iskcon Probortok Mondir, Chattogram, Bangladesh_.jpeg" alt="Temple Image 2">
+      <img src="ISKON.jpeg" alt="Temple Image 3">
+    </div>
+  </section>
+
+  <section id="geeta">
+    <h2>Bhagavad Gita – Spiritual Quests</h2>
+    <ul>
+      <li>Who is Krishna and what does He teach?</li>
+      <li>What is the real meaning of Karma?</li>
+      <li>How to practice Bhakti Yoga?</li>
+      <li>What is the eternal soul?</li>
+      <li>How to gain peace and happiness?</li>
+    </ul>
+  </section>
+<!....................----------------BOOKS SECTION----------------->
+  <section id="books">
+    <h2>Spiritual Books</h2>
+
+    <div class="book-box">
+      <h3>Bhagavad Gita As It Is</h3>
+      <p>The most authentic translation of the sacred text, explained by Srila Prabhupada. This book reveals the direct instructions of Lord Krishna.</p>
+    </div>
+
+    <div class="book-box">
+      <h3>Srimad Bhagavatam</h3>
+      <p>The crown jewel of spiritual literature describing Krishna's pastimes, incarnations, and divine teachings.</p>
+    </div>
+
+    <div class="book-box">
+      <h3>Chaitanya Charitamrita</h3>
+      <p>The life and teachings of Lord Chaitanya Mahaprabhu, the founder of the Sankirtan movement.</p>
+    </div>
+
+    <div class="book-box">
+      <h3>Nectar of Devotion</h3>
+      <p>A detailed guide on how to practice pure devotional service.</p>
+    </div>
+  </section>
+
+  
+<!-- -----------------------------------------------------ABOUT SRILA PRABHUPADA SECTION----------------------------------------------------- -->
+  <section id="pravupad">
+    <h2>About Srila Prabhupada</h2>
+    <p style="font-size:22px; line-height:1.7;">Srila A.C. Bhaktivedanta Swami Prabhupada, the founder-acharya of ISKCON, is one of the greatest spiritual ambassadors of Sanatana Dharma in modern history. With unshakable faith in the order of his spiritual master, he journeyed alone to the West at the age of 69, carrying only a trunk of books and the message of Lord Krishna. Through his purity, determination, and divine compassion, he established a global movement that touched millions of hearts. His teachings continue to guide devotees in understanding the true purpose of life, the path of Bhakti Yoga, and the eternal relationship between the soul and Krishna.</p>
+
+    <p style="font-size:22px; line-height:1.7;">Srila Prabhupada translated and wrote elaborate purports on sacred scriptures such as the Bhagavad Gita As It Is, Srimad Bhagavatam, Chaitanya Charitamrita, and many more timeless works. His books act as a spiritual lighthouse, illuminating the path for seekers who wish to rise above material confusion and taste the bliss of Krishna Consciousness. His legacy lives on in every ISKCON temple, every kirtan, every devotee, and every soul who comes closer to God through his teachings.</p>
+
+    <h3 style="font-size:26px; color:#cc6600; margin-top:30px;">Timeline of Srila Prabhupada</h3>
+    <ul style="font-size:20px; line-height:1.6;">
+      <li><strong>1896:</strong> Birth of Abhay Charan De in Kolkata.</li>
+      <li><strong>1933:</strong> Meets his spiritual master Srila Bhaktisiddhanta Sarasvati Thakura.</li>
+      <li><strong>1965:</strong> Travels to the USA on the Jaladuta.</li>
+      <li><strong>1966:</strong> Establishes ISKCON in New York.</li>
+      <li><strong>1970–77:</strong> Opens 108 temples worldwide & publishes many spiritual books.</li>
+    </ul>
+
+    <h3 style="font-size:26px; color:#cc6600; margin-top:30px;">Major Achievements</h3>
+    <ul style="font-size:20px; line-height:1.6;">
+      <li>Established the worldwide Hare Krishna Movement.</li>
+      <li>Translated over 80 volumes of spiritual literature.</li>
+      <li>Opened more than 108 ISKCON temples in 11 years.</li>
+      <li>Inspired millions globally to take up Bhakti Yoga.</li>
+      <li>Started prasadam distribution programs worldwide.</li>
+    </ul>
+
+    <h3 style="font-size:26px; color:#cc6600; margin-top:30px;">Prabhupada Photo Gallery</h3>
+    <div class="gallery">
+      <img src="pravupad1.jpeg" style="width:30%; border-radius:10px;">
+      <img src="pravupad2.jpeg" style="width:30%; border-radius:10px;">
+      <img src="Jai prabhupad ki Hare Krishna.jpeg" style="width:30%; border-radius:10px;">
+    </div>
+
+    <h3 style="font-size:26px; color:#cc6600; margin-top:30px;">Prabhupada Books Slider</h3>
+    <div id="slider" style="width:100%; overflow:hidden; white-space:nowrap; border-radius:10px;">
+      <img src="ISKCON.jpeg" style="width:300px; display:inline-block; margin-right:20px;">
+      <img src="book1.jpeg" style="width:300px; display:inline-block; margin-right:20px;">
+      <img src="book2.jpeg" style="width:300px; display:inline-block; margin-right:20px;">
+    </div>
+
+  <section id="japa-counter">
+  <h2>📿 Digital Japa Counter</h2>
+
+  <div class="japa-box">
+    <h3>Hare Krishna Maha Mantra</h3>
+
+    <p id="japaCount">0</p>
+
+    <button onclick="countJapa()">🙏 Chant +1</button>
+    <button onclick="resetJapa()">🔄 Reset</button>
+
+    <p>Target: 108 Chants</p>
+  </div>
+</section>
+
+<style>
+.japa-box{
+  max-width:400px;
+  margin:auto;
+  padding:25px;
+  text-align:center;
+  background:#fff3d6;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(255,165,0,0.4);
+}
+
+#japaCount{
+  font-size:50px;
+  font-weight:bold;
+  color:#cc6600;
+}
+</style>
+
+<script>
+let japa = localStorage.getItem("japaCount") || 0;
+document.getElementById("japaCount").innerHTML = japa;
+
+function countJapa(){
+  japa++;
+  document.getElementById("japaCount").innerHTML = japa;
+  localStorage.setItem("japaCount", japa);
+
+  if(japa == 108){
+    alert("🎉 Congratulations! You completed 108 chants! Hare Krishna! 🙏");
+  }
+}
+
+function resetJapa(){
+  japa = 0;
+  document.getElementById("japaCount").innerHTML = japa;
+  localStorage.setItem("japaCount", japa);
+}
+</script>
+
+<!-- **Story: Govardhana Hill** -->
+<section id="story" class="section">
+  <h2>Govardhana Hill — Krishna's Protection</h2>
+  <p style="font-size:18px; max-width:900px; margin:auto;">
+    As a child in Vrindavan, Krishna lifted the Govardhana Hill on his little finger
+    to shelter the villagers from torrential rains sent by Indra, the king of the heavens.
+    The villagers and their cattle stood safely beneath the hill for seven days and nights
+    while Krishna held it aloft. This act showed that by devotion and humility the Lord
+    protects those who surrender to Him. The Govardhana episode teaches practical
+    compassion, community care, and the supremacy of loving service over pride and ritual.
+  </p>
+</section>
+<section id="gita-quiz">
+  <h2>📖 Bhagavad Gita Quiz</h2>
+
+  <div class="quiz-box">
+
+    <div class="question">
+      <p><b>1. Who spoke the Bhagavad Gita?</b></p>
+      <input type="radio" name="q1" value="0"> Arjuna<br>
+      <input type="radio" name="q1" value="1"> Lord Krishna<br>
+      <input type="radio" name="q1" value="0"> Bhishma<br>
+    </div>
+
+    <div class="question">
+      <p><b>2. To whom was the Bhagavad Gita spoken?</b></p>
+      <input type="radio" name="q2" value="1"> Arjuna<br>
+      <input type="radio" name="q2" value="0"> Duryodhana<br>
+      <input type="radio" name="q2" value="0"> Karna<br>
+    </div>
+
+    <div class="question">
+      <p><b>3. How many chapters are in the Bhagavad Gita?</b></p>
+      <input type="radio" name="q3" value="0"> 12<br>
+      <input type="radio" name="q3" value="1"> 18<br>
+      <input type="radio" name="q3" value="0"> 24<br>
+    </div>
+
+    <div class="question">
+      <p><b>4. What yoga does Krishna teach in the Gita?</b></p>
+      <input type="radio" name="q4" value="1"> Bhakti Yoga<br>
+      <input type="radio" name="q4" value="0"> Only Physical Yoga<br>
+      <input type="radio" name="q4" value="0"> Magic Yoga<br>
+    </div>
+
+    <button onclick="checkQuiz()">Submit Quiz</button>
+
+    <h3 id="result"></h3>
+
+  </div>
+</section>
+
+<style>
+.quiz-box{
+  max-width:700px;
+  margin:auto;
+  padding:25px;
+  background:#fff3d6;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(255,165,0,0.3);
+}
+
+.question{
+  margin-bottom:20px;
+  text-align:left;
+}
+
+#result{
+  color:#cc6600;
+  margin-top:20px;
+}
+</style>
+
+<script>
+function checkQuiz(){
+
+  let score = 0;
+
+  let answers = document.querySelectorAll('input[type="radio"]:checked');
+
+  answers.forEach(ans=>{
+    score += Number(ans.value);
+  });
+
+  let message = "";
+
+  if(score === 4){
+    message = "🏆 Excellent! You know Bhagavad Gita very well.";
+  }
+  else if(score >= 2){
+    message = "🌸 Good Job! Keep reading Bhagavad Gita.";
+  }
+  else{
+    message = "📖 Keep learning Krishna Consciousness!";
+  }
+
+  document.getElementById("result").innerHTML =
+  `Your Score: ${score}/4 <br>${message}`;
+}
+</script>
+<!-- ================= EVENTS CALENDAR ================= -->
+<section id="events">
+  <h2>📅 Upcoming Spiritual Events</h2>
+
+  <div class="event-card">
+    <div class="event-date">
+      <h3>15</h3>
+      <p>Aug</p>
+    </div>
+    <div class="event-info">
+      <h3>🎉 Sri Krishna Janmashtami</h3>
+      <p>Special Kirtan, Abhishek, Prasadam Distribution & Midnight Arati.</p>
+    </div>
+  </div>
+
+
+  <div class="event-card">
+    <div class="event-date">
+      <h3>Every</h3>
+      <p>Sat</p>
+    </div>
+    <div class="event-info">
+      <h3>🎶 Harinam Sankirtan</h3>
+      <p>Public chanting and book distribution program.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+#events{
+  text-align:center;
+}
+
+.event-card{
+  display:flex;
+  align-items:center;
+  margin:20px auto;
+  max-width:800px;
+  background:#fff3d6;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 0 15px rgba(255,165,0,0.25);
+}
+
+.event-date{
+  min-width:120px;
+  background:linear-gradient(to bottom,#ffcc66,#ff9933);
+  color:#4a2c00;
+  padding:20px;
+  font-weight:bold;
+}
+
+.event-date h3{
+  margin:0;
+  font-size:32px;
+}
+
+.event-info{
+  padding:20px;
+  text-align:left;
+}
+
+.event-info h3{
+  color:#cc6600;
+  margin-bottom:10px;
+}
+</style>
+
+<!-- 🧡 DONOR WALL -->
+<div class="donor-wall">
+  <h3>🙏 Donor Wall – Hare Krishna 🙏</h3>
+  <ul id="donorList"></ul>
+</div>
+
+  
+     
+    </div>
+
+</div>
+
+<!-- AUDIO (Hari Bol) -->
+  <audio id="bellSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7d7b157a56.mp3"></audio>
+  <audio id="krishnaChant" src="LNS_Bhajans_-_Kirtan_Mela_2013_Hare_Krishna_Kirtan_Day-03_-_2013-03-13_ISKCON_Mayapur.mp3"></audio>
+
+  <!-- duplicate header removed to avoid repetition -->
+<section id="temple-builder">
+  <h2>🛕 Build ISKCON Temple</h2>
+
+  <div id="templeArea">
+    🌱 Empty Land
+  </div>
+
+  <p>Spiritual Points: <span id="points">0</span></p>
+
+  <button onclick="buildTemple()">🛕 Build Temple</button>
+</section>
+
+<style>
+#temple-builder{
+  text-align:center;
+  padding:30px;
+}
+
+#templeArea{
+  width:350px;
+  height:250px;
+  margin:20px auto;
+  background:#fff3d6;
+  border:3px solid #cc6600;
+  border-radius:15px;
+  font-size:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+#temple-builder button{
+  padding:12px 20px;
+  font-size:18px;
+}
+</style>
+
+<script>
+let stage = 0;
+let points = 0;
+
+const templeStages = [
+"🌱 Empty Land",
+"🧱 Foundation Built",
+"🛕 Temple Structure Built",
+"🛕🚩 Temple With Flag",
+"🛕🚩🔔 Temple With Bell",
+"🛕🚩🔔🌳 Complete Temple"
+];
+
+function buildTemple(){
+
+if(stage < templeStages.length-1){
+
+stage++;
+points += 10;
+
+document.getElementById("templeArea").innerHTML =
+templeStages[stage];
+
+document.getElementById("points").innerHTML =
+points;
+
+if(stage === templeStages.length-1){
+setTimeout(()=>{
+alert("🎉 Hare Krishna! Temple Completed Successfully! 🙏");
+},300);
+}
+}
+}
+</script>
+<!-- ================= KRISHNA PUZZLE GAME ================= -->
+
+<section id="krishnaPuzzle">
+  <h2>🧩 Krishna Puzzle Game</h2>
+  <p>Find all Krishna symbols and complete the puzzle! 🙏</p>
+
+  <div class="puzzle-board">
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+    <div class="tile" onclick="flipTile(this)">?</div>
+  </div>
+
+  <h3>Opened: <span id="openedTiles">0</span>/9</h3>
+
+  <div id="puzzleMessage"></div>
+</section>
+<section id="kurukshetra-game">
+  <h2>🏹 Kurukshetra: The Path of Dharma 🦚</h2>
+
+  <div id="gameBoard">
+    <div id="player">🏹</div>
+  </div>
+
+  <p>⭐ Dharma Points: <span id="score">0</span></p>
+  <p>Use ← ↑ ↓ → Arrow Keys to move Arjuna</p>
+</section>
+  <!-- HOME SECTION -->
+  <section class="section">
+    <h2>Welcome to ISKCON Devdaha</h2>
+    <p>
+      ISKCON Devdaha is a spiritual center dedicated to spreading the teachings of
+      Lord Sri Krishna as presented in the Bhagavad-gita and Srimad Bhagavatam.
+      Join us in kirtan, devotion, and spiritual growth.
+    </p>
+  </section>
+
+  <!-- DONATION SECTION -->
+  <section class="section" id="donate">
+    <h2>🙏 Make a Spiritual Donation 🙏</h2>
+    <p>Your donation helps support temple activities, prasadam distribution, and spiritual programs.</p>
+
+
+    <!-- Chanting Audio -->
+<audio id="chantSound" src="https://static1.squarespace.com/static/5eac5e4b493cd672d40c6021/t/5f7c17e30d27ea5fb3c37f34/1602007012185/maha-mantra.mp3"></audio>
+
+<div class="mantra-slider" onclick="playChant()">
+  <div class="mantra-track">
+    <span class="glow">Hare Krishna Hare Krishna, Krishna Krishna Hare Hare — Hare Rama Hare Rama, Rama Rama Hare Hare</span>
+    <span class="glow">Hare Krishna Hare Krishna, Krishna Krishna Hare Hare — Hare Rama Hare Rama, Rama Rama Hare Hare</span>
+  </div>
+</div>
+
+<!-- ---------------- BEAUTIFUL QR DONATION BOX ---------------- -->
+
+<div style="
+    max-width: 400px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+">
+
+    <h2 style="color:#1ba548; margin-bottom:5px;">eSewa Donation</h2>
+    <p style="opacity:0.7; margin-top:0;">Scan the QR to donate</p>
+
+    <!-- QR IMAGE -->
+    <img src="d5965b92-858d-439c-876d-07b0fc2f2f0d.jpeg" 
+         alt="eSewa QR" 
+         style="
+            width: 250px; 
+            border-radius:12px; 
+            margin-top:15px;
+            border: 3px solid #1ba548;
+         ">
+    
+    <h3 style="margin-top:15px; margin-bottom:5px;">sandesh pandey</h3>
+    <p style="margin-top:0; font-size:17px; opacity:0.8;">9864569740</p>
+
+    <div style="
+        background:#1ba548; 
+        color:white; 
+        padding:12px; 
+        border-radius:10px;
+        margin-top:15px;
+        font-size:18px;
+        font-weight:bold;
+    ">
+        Scan using eSewa app
+    <button class="donate-btn" onclick="playSounds()">
+      🌸 Hari Bol – press if you donate 🌸
+    </button>
+  </section>
+
+  <!-- Visitor Counter -->
+<div id="visitorCounter" style="
+text-align:center;
+font-size:22px;
+font-weight:bold;
+color:#cc6600;
+background:#fff3d6;
+padding:15px;
+border-radius:10px;
+margin:20px auto;
+max-width:300px;
+box-shadow:0 0 10px rgba(255,165,0,0.3);
+">
+👥 Visitors: 0
+</div>
+
+<script>
+let visitors = localStorage.getItem("iskconVisitors");
+
+if(visitors === null){
+    visitors = 1;
+} else {
+    visitors = parseInt(visitors) + 1;
+}
+
+localStorage.setItem("iskconVisitors", visitors);
+
+document.getElementById("visitorCounter").innerHTML =
+"👥 Visitors: " + visitors;
+</script>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <h2>About ISKCON</h2>
+    <p>
+      ISKCON (International Society for Krishna Consciousness) teaches the
+      timeless wisdom of the Vedas and promotes devotion to Lord Krishna through
+      chanting, meditation, and selfless service.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 ISKCON Devdaha | Hare Krishna 🌼
+  </footer>
+
+
+  <!-- SCRIPT -->
+  <script>
+    function playSounds() {
+      if (window.playAll) { playAll(); return; }
+      document.getElementById("bellSound")?.play();
+      setTimeout(() => {
+        document.getElementById("krishnaChant")?.play();
+      }, 500);
+    }
+  </script>
+
+  <script>
+  function playChant() {
+    const sound = document.getElementById("chantSound");
+    sound.currentTime = 0;
+    sound.play();
+ 
+  }
+</script>
+
+
+
+<!-- Unified audio controls + clock script -->
+<script>
+  (function(){
+    const audios = () => [
+      document.getElementById('bellSound'),
+      document.getElementById('krishnaChant'),
+      document.getElementById('chantSound')
+    ].filter(Boolean);
+
+    function playAll(){ audios().forEach(a=>{ try{ a.currentTime=0; a.play(); }catch(e){} }); updateMuteButton(); }
+    function pauseAll(){ audios().forEach(a=>{ try{ a.pause(); }catch(e){} }); }
+    function toggleMuteAll(){ const list=audios(); const anyMuted = list.every(a=>a.muted); list.forEach(a=>a.muted=!anyMuted); updateMuteButton(); }
+    function setVolume(v){ audios().forEach(a=>a.volume = v); }
+    function updateMuteButton(){ const btn=document.getElementById('muteBtn'); const list=audios(); if(!btn) return; const muted = list.every(a=>a.muted); btn.textContent = muted ? '🔇' : '🔊'; }
+    function updateClock(){ const el=document.getElementById('clock'); if(!el) return; const now=new Date(); el.textContent = now.toLocaleTimeString(); }
+
+    window.playAll = playAll;
+    window.pauseAll = pauseAll;
+    window.toggleMuteAll = toggleMuteAll;
+    window.setVolume = setVolume;
+    window.updateClock = updateClock;
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const playBtn=document.getElementById('playAllBtn');
+      const pauseBtn=document.getElementById('pauseAllBtn');
+      const muteBtn=document.getElementById('muteBtn');
+      const volumeRange=document.getElementById('volumeRange');
+      if(playBtn) playBtn.addEventListener('click', playAll);
+      if(pauseBtn) pauseBtn.addEventListener('click', pauseAll);
+      if(muteBtn) muteBtn.addEventListener('click', ()=>{ toggleMuteAll(); });
+      const collapseBtn = document.getElementById('collapseAudio');
+      const audioEl = document.getElementById('audioControls');
+      if(collapseBtn && audioEl){ collapseBtn.addEventListener('click', ()=>{ audioEl.classList.toggle('collapsed'); collapseBtn.textContent = audioEl.classList.contains('collapsed') ? '▴' : '▾'; }); }
+      if(volumeRange){ volumeRange.addEventListener('input', (e)=> setVolume(parseFloat(e.target.value))); }
+      updateClock(); setInterval(updateClock, 1000);
+      updateMuteButton();
+    });
+  })();
+</script>
+<script>
+let openedTiles = 0;
+
+const krishnaSymbols = [
+"🦚","🪈","🌸",
+"🙏","🐄","🕉️",
+"🎵","🪔","💙"
+];
+
+function flipTile(tile){
+
+if(tile.classList.contains("opened")) return;
+
+tile.classList.add("opened");
+
+let symbol =
+krishnaSymbols[Math.floor(Math.random()*krishnaSymbols.length)];
+
+tile.innerHTML = symbol;
+
+openedTiles++;
+
+document.getElementById("openedTiles").innerHTML =
+openedTiles;
+
+if(openedTiles === 9){
+
+document.getElementById("puzzleMessage").innerHTML =
+"🎉 Hare Krishna! Puzzle Completed! 🙏";
+
+createFlowers();
+}
+}
+
+function createFlowers(){
+
+for(let i=0;i<30;i++){
+
+const flower=document.createElement("div");
+
+flower.innerHTML="🌸";
+
+flower.style.position="fixed";
+flower.style.left=Math.random()*100+"vw";
+flower.style.top="-20px";
+flower.style.fontSize="30px";
+flower.style.zIndex="9999";
+
+document.body.appendChild(flower);
+
+flower.animate(
+[
+{transform:"translateY(0px)"},
+{transform:"translateY(100vh)"}
+],
+{
+duration:3000,
+iterations:1
+}
+);
+
+setTimeout(()=>{
+flower.remove();
+},3000);
+}
+}
+</script>
+  <script>
+const board = document.getElementById("gameBoard");
+const player = document.getElementById("player");
+
+let x = 20;
+let y = 20;
+let score = 0;
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="ArrowLeft" && x>0) x-=20;
+  if(e.key==="ArrowRight" && x<460) x+=20;
+  if(e.key==="ArrowUp" && y>0) y-=20;
+  if(e.key==="ArrowDown" && y<460) y+=20;
+
+  player.style.left=x+"px";
+  player.style.top=y+"px";
+
+  checkCollision();
+});
+
+function createItem(){
+
+  const item=document.createElement("div");
+  item.className="item";
+
+  const items=["📖","🌸","🦚","🪔"];
+
+  item.innerHTML=
+  items[Math.floor(Math.random()*items.length)];
+
+  item.style.left=Math.random()*450+"px";
+  item.style.top=Math.random()*450+"px";
+
+  board.appendChild(item);
+}
+
+function createEnemy(){
+
+  const enemy=document.createElement("div");
+  enemy.className="enemy";
+  enemy.innerHTML="⚔️";
+
+  enemy.style.left=Math.random()*450+"px";
+  enemy.style.top=Math.random()*450+"px";
+
+  board.appendChild(enemy);
+}
+
+function checkCollision(){
+
+  document.querySelectorAll(".item").forEach(item=>{
+
+    let ix=parseInt(item.style.left);
+    let iy=parseInt(item.style.top);
+
+    if(Math.abs(x-ix)<30 && Math.abs(y-iy)<30){
+
+      score += 10;
+
+      document.getElementById("score").innerHTML=score;
+
+      item.remove();
+
+      if(score >= 100){
+        alert("🎉 Victory! Krishna has guided you on the path of Dharma! 🙏");
+      }
+    }
+  });
+
+  document.querySelectorAll(".enemy").forEach(enemy=>{
+
+    let ex=parseInt(enemy.style.left);
+    let ey=parseInt(enemy.style.top);
+
+    if(Math.abs(x-ex)<30 && Math.abs(y-ey)<30){
+
+      alert("⚔️ A Kaurava warrior defeated Arjuna!\nScore: "+score);
+      location.reload();
+    }
+  });
+}
+
+for(let i=0;i<10;i++) createItem();
+for(let i=0;i<5;i++) createEnemy();
+</script>
+</body>
+</html>
